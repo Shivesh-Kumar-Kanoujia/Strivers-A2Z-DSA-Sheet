@@ -43,7 +43,7 @@ public:
 int main(){
     vector<int> v={10,20,50,30,40};
     Solution sol;
-    int Max = sol.SecondLargestElement(v);
-    cout<<Max<<endl;
+    int Max2 = sol.SecondLargestElement(v);
+    cout<<Max2<<endl;
 }
 
