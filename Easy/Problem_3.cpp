@@ -19,7 +19,7 @@ using namespace std;
 
 class Solution{
 public: 
-    bool isSorted(vector<int> nums){
+    bool isSorted(vector<int>& nums){
         int n=nums.size();
         for(int i=1;i<n;i++){
             if(nums[i]<nums[i-1]){
@@ -35,4 +35,7 @@ int main(){
     bool sort = sol.isSorted(v);
     cout<<sort<<endl;
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 

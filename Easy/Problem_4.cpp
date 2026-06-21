@@ -20,7 +20,7 @@ using namespace std;
 
 class Solution{
 public: 
-    int RemoveDuplicate(vector<int>& nums){
+    int removeDuplicate(vector<int>& nums){
         int i=0;
         int n=nums.size();
         if(nums.empty()){
@@ -38,10 +38,13 @@ public:
 int main(){
     vector<int> v={1,1,2,2,2,3,3};
     Solution sol;
-    int k = sol.RemoveDuplicate(v);   // Storing index upto Unique elements
+    int k = sol.removeDuplicate(v);   // Storing index upto Unique elements
     for(int i=0;i<k;i++){
         cout<<v[i]<<" ";
     }
     cout<<endl;
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 

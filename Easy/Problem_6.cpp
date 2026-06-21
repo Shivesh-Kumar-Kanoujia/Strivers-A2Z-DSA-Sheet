@@ -4,7 +4,7 @@
 
 // Example:
 // Input : nums = [1, 2, 3, 4, 5, 6, 7], k = 2, right
-// Output : [6, 7, 1, 2, 3, 4, 5]
+// Output : [3, 4, 5, 6, 7, 1, 2]
 // Explanation : rotate 1 step to the right: [7, 1, 2, 3, 4, 5, 6]
 // rotate 2 steps to the right: [6, 7, 1, 2, 3, 4, 5] 
 
@@ -19,6 +19,7 @@ using namespace std;
 class Solution{
 public: 
     void RotateLeft(vector<int>& nums, int k){
+
         int n=nums.size();
         reverse(nums.begin(),nums.begin()+k);    // reverse first k elements
         reverse(nums.begin()+k,nums.end());      // reverse remaining n-k elements
@@ -34,4 +35,7 @@ int main(){
     }
     cout<<endl;
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 

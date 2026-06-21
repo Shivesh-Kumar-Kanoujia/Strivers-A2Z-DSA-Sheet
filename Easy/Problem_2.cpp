@@ -37,7 +37,7 @@ public:
                 maxi2=nums[i];
             }
         }
-        return maxi2;      // Returning Maximum Element
+        return (maxi2 == INT_MIN) ? -1 : maxi2;      // Returning Maximum Element
     }
 };
 int main(){
@@ -46,4 +46,7 @@ int main(){
     int Max2 = sol.SecondLargestElement(v);
     cout<<Max2<<endl;
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 

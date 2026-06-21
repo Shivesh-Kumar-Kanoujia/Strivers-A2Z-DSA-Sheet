@@ -37,3 +37,7 @@ int main(){
     int k=sol.LinearSearch(v,30);
     cout<<k<<endl;
 }
+
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
