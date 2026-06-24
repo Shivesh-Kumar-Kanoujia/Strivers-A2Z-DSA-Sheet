@@ -30,7 +30,7 @@ public:
             }
             else if(nums[mid]==1)mid++;
             else{
-                swap(nums[mid],nums[mid]);
+                swap(nums[mid],nums[high]);
                 high--;
             }
         }
@@ -46,3 +46,6 @@ int main(){
     }
     cout<<endl;
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
