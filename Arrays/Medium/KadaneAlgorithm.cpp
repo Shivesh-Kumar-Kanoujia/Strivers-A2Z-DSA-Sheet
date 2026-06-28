@@ -11,7 +11,7 @@
 // Output:
 //  15  
 
-// ----------------------------- Code (Optimal Approach) -----------------------------
+// ------------------------------------ Code (Optimal Approach) ------------------------------------------
 // Kadane's Algorithm
 
 #include<iostream>
