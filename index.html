@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DSA Documentation — Striver A2Z Sheet</title>
+  <meta name="description" content="Documentation site for Striver A2Z DSA Sheet — problems, solutions, and notes." />
+
+  <link rel="stylesheet" href="style.css" />
+  <!-- Prism.js for syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="app" class="app">
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar navigation">
+      <div class="sidebar-header">
+        <button id="menuToggle" class="hamburger" aria-label="Toggle menu">☰</button>
+        <a href="#" id="homeLink" class="brand">
+          <svg class="logo" viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><use href="assets/icons.svg#logo" /></svg>
+          <span class="brand-text">DSA Docs</span>
+        </a>
+      </div>
+
+      <div class="search-wrap">
+        <input id="search" class="search" placeholder="Search folders, problems, topics..." aria-label="Search" />
+      </div>
+
+      <nav id="folders" class="folders" role="navigation" aria-label="Problem folders">
+        <!-- dynamically populated -->
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="theme-toggle">
+          <label class="switch">
+            <input type="checkbox" id="themeSwitch" />
+            <span class="slider"></span>
+          </label>
+          <small>Dark</small>
+        </div>
+      </div>
+    </aside>
+
+    <main id="main" class="main">
+      <header class="topbar">
+        <div class="breadcrumbs" id="breadcrumbs">Home</div>
+        <div class="stats" id="topStats"></div>
+      </header>
+
+      <section id="content" class="content">
+        <!-- Home page or folder content appears here -->
+      </section>
+
+      <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
+    </main>
+  </div>
+
+  <!-- Templates -->
+  <template id="folderTemplate">
+    <div class="folder">
+      <button class="folder-toggle" aria-expanded="false">
+        <span class="folder-name"></span>
+        <span class="folder-count"></span>
+      </button>
+      <ul class="problem-list" hidden></ul>
+    </div>
+  </template>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <header>
+        <h3 class="card-title"></h3>
+        <div class="badges"></div>
+      </header>
+      <p class="card-desc"></p>
+      <div class="card-actions">
+        <div class="solved" title="Solved"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check" /></svg></div>
+        <button class="open-btn">Open</button>
+      </div>
+    </article>
+  </template>
+
+  <template id="problemTemplate">
+    <article class="problem-page">
+      <div class="problem-header">
+        <div>
+          <h1 class="p-title"></h1>
+          <div class="p-badges"></div>
+        </div>
+        <div class="p-meta">
+          <div><strong>Time:</strong> <span class="p-time"></span></div>
+          <div><strong>Space:</strong> <span class="p-space"></span></div>
+        </div>
+      </div>
+
+      <section class="p-summary">
+        <h2>Approach summary</h2>
+        <p class="p-approach"></p>
+        <h3>Description</h3>
+        <p class="p-desc"></p>
+      </section>
+
+      <section class="p-code">
+        <div class="code-toolbar">
+          <div class="code-controls">
+            <button id="copyCode" class="tool">Copy</button>
+            <button id="downloadCode" class="tool">Download</button>
+            <button id="fullscreenCode" class="tool">Fullscreen</button>
+          </div>
+          <div class="nav-controls">
+            <button id="prevProblem" class="tool">← Prev</button>
+            <button id="nextProblem" class="tool">Next →</button>
+            <button id="backFolder" class="tool">Back to Folder</button>
+          </div>
+        </div>
+
+        <pre class="code-wrap"><code id="codeViewer" class="language-cpp"></code></pre>
+      </section>
+    </article>
+  </template>
+
+  <!-- Data -- loaded first so script can use it immediately -->
+  <script src="data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
