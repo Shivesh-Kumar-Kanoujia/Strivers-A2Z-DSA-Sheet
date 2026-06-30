@@ -23,6 +23,7 @@
 
       <div class="search-wrap">
         <input id="search" class="search" placeholder="Search folders, problems, topics..." aria-label="Search" />
+        <button id="clearSearch" class="clear-btn" aria-label="Clear search" style="display: none;">×</button>
       </div>
 
       <nav id="folders" class="folders" role="navigation" aria-label="Problem folders">
@@ -65,18 +66,45 @@
     </div>
   </template>
 
+  <!-- Enhanced File/Folder Card Template -->
   <template id="cardTemplate">
-    <article class="card">
-      <header>
+    <article class="card" role="button" tabindex="0">
+      <div class="card-icon-wrapper">
+        <span class="card-icon" aria-hidden="true"></span>
+        <span class="card-badge"></span>
+      </div>
+      <div class="card-content">
         <h3 class="card-title"></h3>
-        <div class="badges"></div>
-      </header>
-      <p class="card-desc"></p>
+        <div class="card-metadata">
+          <span class="metadata-type"></span>
+          <span class="metadata-size"></span>
+          <span class="metadata-date"></span>
+        </div>
+      </div>
       <div class="card-actions">
         <div class="solved" title="Solved"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check" /></svg></div>
-        <button class="open-btn">Open</button>
+        <button class="open-btn" aria-label="Open file">Open</button>
       </div>
     </article>
+  </template>
+
+  <!-- Empty State Template -->
+  <template id="emptyStateTemplate">
+    <div class="empty-state">
+      <div class="empty-icon">📁</div>
+      <h2>No files found</h2>
+      <p>Add files to this folder to get started.</p>
+    </div>
+  </template>
+
+  <!-- No Results Template -->
+  <template id="noResultsTemplate">
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <h2>No matching files found</h2>
+      <p id="searchTerm"></p>
+      <button id="clearAllSearch" class="btn-secondary">Clear search</button>
+    </div>
   </template>
 
   <template id="problemTemplate">
